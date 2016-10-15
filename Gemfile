@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #my gems 
 gem 'materialize-sass'
 gem 'devise'
+gem 'sweetalert2', '~> 4.0', '>= 4.0.11'
 
 
 # Use ActiveModel has_secure_password

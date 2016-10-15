@@ -6,36 +6,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
+  <%= image_tag("BG.jpg", class: "imgFondo")%>
+
+  <%= render "Partials/navigation" %>
+	
+  <% if notice %>
+    <script>swal({ title: "<%= notice %>", type: "success", timer: 3000,showConfirmButton: false, closeOnConfirm: true });</script>
+  <% end %>
+  
+  <% if alert %>
+    <script>swal({ title: "<%= alert %>", type: "info", timer: 3000,showConfirmButton: false, closeOnConfirm: true });</script>
+  <% end %>
+
+  <section>
+    <div class="container center-align">
+      <%= yield %>
     </div>
-  </nav>			
-		</div>
+  </section>
 
-          
-	</header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-	<%= yield %>
 
 </body>
 </html>

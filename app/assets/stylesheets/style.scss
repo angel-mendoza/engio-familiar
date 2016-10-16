@@ -17,11 +17,18 @@ body{
 }
 
 .myPanel{
-    background-color: rgba(0,201,204,0.8);
+    background-color: rgba(0,255,255,0.65);
     box-shadow: 2px 2px 1px #000;
     border-radius: 10px;
     padding: 3%;
     margin-top: 3%;
 }
+
+label{
+    color:#000 !important;
+    font-size: 1.5em  !important;
+}
+
+
 
 

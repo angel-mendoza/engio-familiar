@@ -1,32 +1,28 @@
 <p id="notice"><%= notice %></p>
-<h1>Listing Products</h1>
-
-
-
+<h1>Lista De Productos</h1>
   <div class="row ">
       <% @products.each do |product| %>
       <div class="col s12 l6">
         <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <%= image_tag product.cover.url(), class: "imgCatalogo" %>
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><%= product.title %><i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><%= product.title %><i class="material-icons right">close</i></span>
-          <p><%= product.description %></p>
-          <p><%= product.price %></p>
-          <%= link_to 'Show', product %>
-          <%= link_to 'Edit', edit_product_path(product) %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= image_tag product.cover.url(), class: "imgCatalogo" %>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%= product.title %><i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><%= product.title %><i class="material-icons right">close</i></span>
+            <p><%= product.description %></p>
+            <p>lorem</p>
+            <p><%= product.price %></p>
+            <%= link_to 'Mostrar', product,class: "waves-effect waves-light btn" %>
+            <%= link_to 'Editar', edit_product_path(product),class: "waves-effect waves-light btn" %>
+            <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' },class: "waves-effect waves-light btn" %>
+          </div>
         </div>
       </div>
       <% end %>
   </div>
 
-
-
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Nuevo PRoducto', new_product_path, class: "waves-effect waves-light btn-large" %>

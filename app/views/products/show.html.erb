@@ -1,21 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div class="myPanel2">
+	<div class="container">
+		<div class="row">
+			<h2><%= @product.title %></h2>
+			<div class="col s12 l6">
+				<div class="field">
+					<%= image_tag @product.cover.url(), class: "responsive-img imgShow materialboxed" %>
+				</div>
+			</div>
+			<div class="col s12 l6">
+				<p>
+				  <strong>Descripcion:</strong>
+				  <%= @product.description %>
+				</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<div class="field">
-	<%= image_tag @product.cover.url() %>
+				<p>
+				  <strong>Precio:</strong>
+				  <%= @product.price %>
+				</p>	
+			</div>
+		</div>
+		<h3>Comentarios:</h3>
+		<%= render 'comments/form' %>
+		<br>
+		<div class="divider"></div>
+		<% @product.comments.each do |comment| %>
+			<div class="row">
+		        <div class="col s12 m12 l12">
+		          <div class="card #42a5f5 blue lighten-1">
+		            <div class="card-content white-text">
+		              <span class="card-title">Escrito por: <%= comment.user.email %></span>
+		              <p><%= comment.body %></p>
+		            </div>
+		          </div>
+		        </div>
+			</div>
+		<% end %>
+	</div>
+	<%= link_to 'Editar', edit_product_path(@product), class: "waves-effect waves-light btn" %> 
+	<%= link_to 'Atras', products_path, class: "waves-effect waves-light btn" %>	
 </div>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+
+
